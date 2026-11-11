@@ -43,3 +43,5 @@ Luego visita `http://localhost:3000`.
 - 3 vidas con invencibilidad temporal al reaparecer (parpadeo)
 - Asteroides se parten en fragmentos más pequeños al ser destruidos
 - Partículas de explosión al destruir asteroides
+- **Power-up "Velocidad"**: Aparece cada 3 asteroides destruidos, permite duplicar la velocidad de la nave por 5 segundos (50 puntos extra)
+- Efectos visuales: llama del propulsor, brillo en la vida cuando el power-up está activo

@@ -50,6 +50,7 @@ Defined in `game.js`:
 |--------|-----------|--------|
 | Ship | `ROT` (rotation speed) | 3.5 rad/s |
 | Ship | `THRUST` (acceleration) | 260 px/s² |
+| Ship | `THRUST_BOOST` | 520 px/s² (speed power-up) |
 | Ship | `DRAG` | 0.987 (velocity decay) |
 | Ship | `SHOOT_COOLDOWN` | 0.2s |
 | Bullet | `SPEED` | 520 px/s |
@@ -57,6 +58,22 @@ Defined in `game.js`:
 | Asteroid | `RADIOS` (radii) | [0, 16, 30, 50] |
 | Asteroid | `SPEEDS` (base speed) | [0, 85, 55, 32] |
 | Asteroid | `POINTS` | [0, 100, 50, 20] |
+
+## Power-up System
+
+**Speed Power-up** (Velocidad):
+- Appears every 3 asteroids destroyed
+- Grants double ship movement speed for 5 seconds
+- Worth 50 points when collected
+- Visual indicator: "VELOCIDAD x2" in HUD with countdown
+- Ship life icon glows green when active
+
+**Implementation details**:
+- `asteroidsDestroyed` counter tracks destroyed asteroids
+- `PowerUp` class: green pulsing circle with "S" text, smooth random movement
+- `Ship.speedBoost` / `Ship.speedBoostTimer` track active effect
+- `THRUST_BOOST = 520` applied only when `speedBoost` is true
+- Only one power-up can exist at a time
 
 ## Important Code Patterns
 
